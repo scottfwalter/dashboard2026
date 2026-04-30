@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <div class="logo-icon"></div>
+            <span class="logo-text">Overlay</span>
+          </div>
+          <img src="https://i.pravatar.cc/150?img=11" alt="Profile" class="profile-pic" />
+        </div>
+
+        <div class="search-container">
+          <i class="ph ph-magnifying-glass search-icon"></i>
+          <input type="text" placeholder="Search" class="search-input" />
+          <span class="shortcut">⌘K</span>
+        </div>
+
+        <div class="menu-section">
+          <div class="menu-header">
+            <h3 class="menu-title">Menu</h3>
+            <button class="collapse-btn" id="collapseBtn">
+              <i class="ph ph-caret-left"></i>
+            </button>
+          </div>
+          <nav class="menu-items">
+            <a href="#" class="menu-item active">
+              <i class="ph-fill ph-squares-four"></i>
+              <span class="menu-text">Dashboard</span>
+            </a>
+            <a href="#" class="menu-item">
+              <i class="ph ph-calendar-blank"></i>
+              <span class="menu-text">Schedule</span>
+              <span class="nav-badge">12</span>
+            </a>
+            <a href="#" class="menu-item">
+              <i class="ph ph-users"></i>
+              <span class="menu-text">Employee</span>
+            </a>
+            <div class="nav-item-group">
+              <a href="#" class="menu-item has-submenu" id="projects-toggle">
+                <i class="ph ph-folder-simple"></i>
+                <span class="menu-text">Projects</span>
+                <i class="ph ph-caret-down submenu-caret"></i>
+              </a>
+              <div class="submenu" id="projects-submenu">
+                <a href="#" class="submenu-item">Alpha</a>
+                <a href="#" class="submenu-item">Beta</a>
+                <a href="#" class="submenu-item">Gold Master</a>
+              </div>
+            </div>
+            <a href="#" class="menu-item">
+              <i class="ph ph-clock"></i>
+              <span class="menu-text">Report</span>
+            </a>
+            <a href="#" class="menu-item">
+              <i class="ph ph-notebook"></i>
+              <span class="menu-text">Notes</span>
+            </a>
+            <a href="#" class="menu-item">
+              <i class="ph ph-briefcase"></i>
+              <span class="menu-text">Job</span>
+              <span class="nav-tag">New</span>
+            </a>
+            <a href="#" class="menu-item">
+              <i class="ph ph-megaphone"></i>
+              <span class="menu-text">Hiring</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar-footer">
+          <nav class="menu-items">
+            <a href="#" class="menu-item">
+              <i class="ph ph-headphones"></i>
+              <span class="menu-text">Help Center</span>
+            </a>
+            <a href="#" class="menu-item">
+              <i class="ph ph-chat-teardrop-dots"></i>
+              <span class="menu-text">Feedback</span>
+            </a>
+            <a href="#" class="menu-item">
+              <i class="ph ph-gear"></i>
+              <span class="menu-text">Settings</span>
+            </a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Main Wrapper -->
+      <div class="main-wrapper">
+        <div class="top-bar">
+          <div class="top-bar-actions">
+            <button class="icon-btn"><i class="ph ph-question"></i></button>
+            <button class="icon-btn" id="aiChatBtn"><i class="ph ph-sparkle"></i></button>
+          </div>
+        </div>
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+          <!-- Main Content -->
+          <main id="main" class="main-content">
+            <div class="scroll-content">
+              <header class="main-header">
+                <h1 class="page-title">Dashboard</h1>
+                <div class="header-actions">
+                  <button class="icon-btn"><i class="ph ph-magnifying-glass"></i></button>
+                  <button class="icon-btn notification-btn">
+                    <i class="ph ph-bell"></i>
+                    <span class="notification-dot"></span>
+                  </button>
+                  <div class="date-picker">
+                    <i class="ph ph-calendar-blank"></i>
+                    <span>01 Nov - 2025</span>
+                  </div>
+                  <button class="primary-btn">
+                    <i class="ph ph-plus"></i>
+                    Add New
+                  </button>
+                </div>
+              </header>
+
+              <div class="stats-grid">
+                <!-- Stat Card 1 -->
+                <div class="stat-card">
+                  <h4 class="stat-title">Total Employee</h4>
+                  <div class="stat-value">246</div>
+                  <div class="stat-change positive">
+                    <i class="ph-fill ph-caret-up"></i>
+                    <span class="change-val">12.04%</span>
+                    <span class="change-period">Last month</span>
+                  </div>
+                </div>
+                <!-- Stat Card 2 -->
+                <div class="stat-card">
+                  <h4 class="stat-title">New Employee</h4>
+                  <div class="stat-value">59</div>
+                  <div class="stat-change positive">
+                    <i class="ph-fill ph-caret-up"></i>
+                    <span class="change-val">32.00%</span>
+                    <span class="change-period">Last month</span>
+                  </div>
+                </div>
+                <!-- Stat Card 3 -->
+                <div class="stat-card">
+                  <h4 class="stat-title">Man Employee</h4>
+                  <div class="stat-value">12</div>
+                  <div class="stat-change positive">
+                    <i class="ph-fill ph-caret-up"></i>
+                    <span class="change-val">16.22%</span>
+                    <span class="change-period">Last month</span>
+                  </div>
+                </div>
+                <!-- Stat Card 4 -->
+                <div class="stat-card">
+                  <h4 class="stat-title">Woman Employee</h4>
+                  <div class="stat-value">45%</div>
+                  <div class="stat-change negative">
+                    <i class="ph-fill ph-caret-down"></i>
+                    <span class="change-val">8.06%</span>
+                    <span class="change-period">Last month</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="middle-grid">
+                <div class="chart-card large-card"></div>
+                <div class="chart-card small-card"></div>
+              </div>
+
+              <div class="bottom-grid">
+                <div class="chart-card full-card table-card">
+                  <div class="table-header">
+                    <h3>Recent Employees</h3>
+                  </div>
+                  <div class="table-container">
+                    <table class="data-table">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Role</th>
+                          <th>Status</th>
+                          <th>Email</th>
+                          <th>Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><div class="user-info"><img src="https://i.pravatar.cc/150?img=32" alt="Avatar"><span>Alice Smith</span></div></td>
+                          <td>Product Designer</td>
+                          <td><span class="status-badge active">Active</span></td>
+                          <td>alice.smith@example.com</td>
+                          <td>Nov 01, 2025</td>
+                        </tr>
+                        <tr>
+                          <td><div class="user-info"><img src="https://i.pravatar.cc/150?img=12" alt="Avatar"><span>Bob Jones</span></div></td>
+                          <td>Frontend Developer</td>
+                          <td><span class="status-badge pending">Pending</span></td>
+                          <td>bob.jones@example.com</td>
+                          <td>Oct 28, 2025</td>
+                        </tr>
+                        <tr>
+                          <td><div class="user-info"><img src="https://i.pravatar.cc/150?img=47" alt="Avatar"><span>Charlie Davis</span></div></td>
+                          <td>Data Analyst</td>
+                          <td><span class="status-badge active">Active</span></td>
+                          <td>charlie.davis@example.com</td>
+                          <td>Oct 25, 2025</td>
+                        </tr>
+                        <tr>
+                          <td><div class="user-info"><img src="https://i.pravatar.cc/150?img=5" alt="Avatar"><span>Diana Evans</span></div></td>
+                          <td>Marketing Manager</td>
+                          <td><span class="status-badge inactive">Inactive</span></td>
+                          <td>diana.evans@example.com</td>
+                          <td>Oct 20, 2025</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="pagination">
+                    <button class="page-btn"><i class="ph ph-caret-left"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span class="page-dots">...</span>
+                    <button class="page-btn">10</button>
+                    <button class="page-btn"><i class="ph ph-caret-right"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+
+          <!-- AI Panel -->
+          <aside class="ai-panel" id="aiPanel">
+            <div class="ai-panel-header">
+              <h3>AI Chat</h3>
+              <button class="icon-btn" id="closeAiPanel"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="ai-panel-content">
+              <p>Hello! How can I assist you today?</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
