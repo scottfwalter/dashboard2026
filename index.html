@@ -22,12 +22,6 @@
           <img src="https://i.pravatar.cc/150?img=11" alt="Profile" class="profile-pic" />
         </div>
 
-        <div class="search-container">
-          <i class="ph ph-magnifying-glass search-icon"></i>
-          <input type="text" placeholder="Search" class="search-input" />
-          <span class="shortcut">⌘K</span>
-        </div>
-
         <div class="menu-section">
           <div class="menu-header">
             <h3 class="menu-title">Menu</h3>
@@ -103,8 +97,16 @@
       <div class="main-wrapper">
         <div class="top-bar">
           <div class="top-bar-actions">
-            <button class="icon-btn"><i class="ph ph-question"></i></button>
-            <button class="icon-btn" id="aiChatBtn"><i class="ph ph-sparkle"></i></button>
+            <button class="icon-btn" id="searchBtn" data-search-trigger title="Search (⌘K)" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button>
+            <button class="icon-btn" id="notificationBtn" title="Notifications" aria-label="Notifications">
+              <svg class="bell-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M12 2.5a1.25 1.25 0 0 0-1.235 1.058A6.751 6.751 0 0 0 5.25 10.25v3.379a2 2 0 0 1-.586 1.414l-1.078 1.078A1 1 0 0 0 4.293 17.75h15.414a1 1 0 0 0 .707-1.707l-1.078-1.078a2 2 0 0 1-.586-1.414V10.25a6.751 6.751 0 0 0-5.515-6.692A1.25 1.25 0 0 0 12 2.5Z"/>
+                <path fill="currentColor" d="M9.75 19.25a2.25 2.25 0 0 0 4.5 0h-4.5Z"/>
+              </svg>
+              <span class="bell-badge" id="bellBadge" aria-live="polite" hidden>0</span>
+            </button>
+            <button class="icon-btn" title="Help" aria-label="Help"><i class="ph ph-question"></i></button>
+            <button class="icon-btn" id="aiChatBtn" title="AI Chat" aria-label="AI Chat"><i class="ph ph-sparkle"></i></button>
           </div>
         </div>
         <!-- Content Wrapper -->
@@ -115,15 +117,6 @@
               <header class="main-header">
                 <h1 class="page-title">Dashboard</h1>
                 <div class="header-actions">
-                  <button class="icon-btn"><i class="ph ph-magnifying-glass"></i></button>
-                  <button class="icon-btn notification-btn">
-                    <i class="ph ph-bell"></i>
-                    <span class="notification-dot"></span>
-                  </button>
-                  <div class="date-picker">
-                    <i class="ph ph-calendar-blank"></i>
-                    <span>01 Nov - 2025</span>
-                  </div>
                   <button class="primary-btn">
                     <i class="ph ph-plus"></i>
                     Add New
@@ -193,6 +186,7 @@
                           <th>Status</th>
                           <th>Email</th>
                           <th>Date</th>
+                          <th class="actions-th"><span class="u-visually-hidden">Actions</span></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -202,6 +196,15 @@
                           <td><span class="status-badge active">Active</span></td>
                           <td>alice.smith@example.com</td>
                           <td>Nov 01, 2025</td>
+                          <td class="actions-cell">
+                            <button class="kebab-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Actions for Alice Smith">
+                              <svg class="kebab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="5" r="1.75" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="1.75" fill="currentColor"/>
+                                <circle cx="12" cy="19" r="1.75" fill="currentColor"/>
+                              </svg>
+                            </button>
+                          </td>
                         </tr>
                         <tr>
                           <td><div class="user-info"><img src="https://i.pravatar.cc/150?img=12" alt="Avatar"><span>Bob Jones</span></div></td>
@@ -209,6 +212,15 @@
                           <td><span class="status-badge pending">Pending</span></td>
                           <td>bob.jones@example.com</td>
                           <td>Oct 28, 2025</td>
+                          <td class="actions-cell">
+                            <button class="kebab-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Actions for Bob Jones">
+                              <svg class="kebab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="5" r="1.75" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="1.75" fill="currentColor"/>
+                                <circle cx="12" cy="19" r="1.75" fill="currentColor"/>
+                              </svg>
+                            </button>
+                          </td>
                         </tr>
                         <tr>
                           <td><div class="user-info"><img src="https://i.pravatar.cc/150?img=47" alt="Avatar"><span>Charlie Davis</span></div></td>
@@ -216,6 +228,15 @@
                           <td><span class="status-badge active">Active</span></td>
                           <td>charlie.davis@example.com</td>
                           <td>Oct 25, 2025</td>
+                          <td class="actions-cell">
+                            <button class="kebab-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Actions for Charlie Davis">
+                              <svg class="kebab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="5" r="1.75" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="1.75" fill="currentColor"/>
+                                <circle cx="12" cy="19" r="1.75" fill="currentColor"/>
+                              </svg>
+                            </button>
+                          </td>
                         </tr>
                         <tr>
                           <td><div class="user-info"><img src="https://i.pravatar.cc/150?img=5" alt="Avatar"><span>Diana Evans</span></div></td>
@@ -223,6 +244,15 @@
                           <td><span class="status-badge inactive">Inactive</span></td>
                           <td>diana.evans@example.com</td>
                           <td>Oct 20, 2025</td>
+                          <td class="actions-cell">
+                            <button class="kebab-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Actions for Diana Evans">
+                              <svg class="kebab-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="5" r="1.75" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="1.75" fill="currentColor"/>
+                                <circle cx="12" cy="19" r="1.75" fill="currentColor"/>
+                              </svg>
+                            </button>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -253,6 +283,11 @@
           </aside>
         </div>
       </div>
+    </div>
+    <div class="action-menu" id="actionMenu" role="menu" aria-label="Row actions" hidden>
+      <button class="action-menu__item" role="menuitem" type="button" data-action="edit">Edit</button>
+      <button class="action-menu__item action-menu__item--danger" role="menuitem" type="button" data-action="delete">Delete</button>
+      <button class="action-menu__item" role="menuitem" type="button" data-action="activate">Activate</button>
     </div>
     <script src="script.js"></script>
   </body>
